@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Yingge//Trip//ZH-TW
+BEGIN:VEVENT
+UID:yingge-20261225@trip.invalid
+DTSTAMP:20261120T000000Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:鶯歌陶藝小旅行
+LOCATION:台北市 94 會所（臺北市文山區興隆路三段300號1樓
+ ）
+DESCRIPTION:10:20 a.m. 於台北市 94 會所（臺北市文山區興隆路
+ 三段300號1樓）集合後，開車前往蔗鼎鮮養生火鍋 三峽總
+ 店（約 2 小時），餐後從臺北大學站搭捷運前往新旺集
+ 瓷（新北市鶯歌區尖山埔路81號）參加陶藝 DIY（約 2 小
+ 時），接著逛鶯歌老街（約 1.5 小時）。結束後搭捷運回
+ 臺北大學站，再開車回家。
+END:VEVENT
+END:VCALENDAR
