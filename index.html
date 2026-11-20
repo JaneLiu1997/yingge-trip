@@ -101,6 +101,23 @@ const status = document.getElementById('share-status');
 save.href = card.src;
 const imageBytes = Uint8Array.from(atob(card.src.split(',')[1]), char => char.charCodeAt(0));
 const file = new File([imageBytes], save.download, { type: 'image/jpeg' });
+if ((ios || android) && navigator.share && navigator.canShare?.({files: [file]})) {
+  save.title = '儲存邀請卡圖片';
+  save.setAttribute('aria-label', save.title);
+  save.addEventListener('click', async event => {
+    event.preventDefault();
+    try {
+      await navigator.share({ files: [file] });
+    } catch (error) {
+      if (error.name === 'AbortError') return;
+      const download = document.createElement('a');
+      download.href = card.src;
+      download.download = save.download;
+      download.textContent = '下載邀請卡圖片';
+      status.replaceChildren(download);
+    }
+  });
+}
 const webLink = location.protocol === 'https:' && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)
   ? location.origin + location.pathname : '';
 const payload = webLink
